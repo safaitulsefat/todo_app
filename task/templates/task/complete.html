@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div style="width: 80%; margin: auto;">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">task title</th>
+        <th scope="col">task discreption</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+     {% for s in show %}
+     {% if  s.is_completed %}
+      <tr>
+        <th>{{s.id}}</th>
+        <td>{{s.taskTitle}}</td>
+        <td>{{s.taskDescription}}</td>
+        <td>completed</td>
+        
+      </tr> 
+      {% endif %}
+      {% endfor %}
+    
+    </tbody>
+  </table>
+  </div>
+{% endblock %}
